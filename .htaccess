@@ -1,6 +1,0 @@
-RewriteEngine On
-Options -Indexes
-Options +FollowSymLinks -Indexes
-RewriteCond %{SCRIPT_FILENAME} !-f
-RewriteCond %{SCRIPT_FILENAME} !-d
-RewriteRule ^(.*)$ ./startup.html?u=$1 [QSA]
