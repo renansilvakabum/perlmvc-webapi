@@ -1,20 +1,33 @@
 version: '2'
 services:
   db:
-    container_name: perlmvc-db
+    container_name: customerservice-db
     image: mysql:5.7
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - ./mysql-datavolume:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
+
+  php:
+    container_name: customerservice-php
+    build: .
+    restart: always
+    ports:
+      - "8006:80"
+    volumes:
+      - ./:/var/www
+      - ./logs:/var/log/nginx/web
+    links:
+    - db
+
   phpmyadmin:
-    container_name: perlmvc-phpmyadmin
+    container_name: customerservice-phpmyadmin
     image: phpmyadmin/phpmyadmin
     restart: always
     ports:
-      - 8183:80
+      - 8184:80
     environment:
       - MYSQL_USER=root
       - MYSQL_ROOT_PASSWORD=root
