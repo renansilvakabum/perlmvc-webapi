@@ -24,7 +24,8 @@ $uri = $cgi->param("uri");
 
 if($router{$uri} eq undef)
 {
-    print "Not Found!";
+    use StatusCodeNotFound;
+    StatusCodeNotFound::response "Route not found!";    
     exit;
 }
 
