@@ -7,5 +7,7 @@ package Validator;
         {
             return $message;
         }
+
+        return "";
     }
 }
