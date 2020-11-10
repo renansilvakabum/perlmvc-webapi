@@ -14,7 +14,8 @@ package MaxValidator;
 
     sub validate {
         $value = $_[0];
-        Validator::validate (scalar $value <= $length) $message ;
+        Validator::validate((scalar $value <= $length), $message);
     }
     
 }
+1;
