@@ -1,6 +1,7 @@
-package RequiredValidator;
+package MinValidator;
 {
     use Validator;
+    my $length;
     my $message;
 
     sub new {
@@ -8,12 +9,12 @@ package RequiredValidator;
     }
 
     sub setParameters {
-        my ($message) = @_;
+        my ($message, $length) = @_;
     }
 
     sub validate {
         $value = $_[0];
-        Validator::validate ($value ne undef || $value > 0) $message ;
+        Validator::validate (scalar $value >= $length) $message ;
     }
     
 }

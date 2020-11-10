@@ -4,7 +4,7 @@ package CustomerModel
     $model = Model->new;
 
     BEGIN {
-        $model->setAttribute "id";
+        $model->setAttribute "id" {};
         $model->setAttribute "name";
         $model->setAttribute "mail";
         $model->setAttribute "excluded";
