@@ -9,6 +9,7 @@ BEGIN{
     push @INC, "./lib/Model/";
     push @INC, "./lib/HTTP/";
     push @INC, "./lib/Service/";
+    push @INC, "./lib/Validator/";
 }
 #--autoload
 
