@@ -10,6 +10,7 @@ BEGIN{
     push @INC, "./lib/HTTP/";
     push @INC, "./lib/Service/";
     push @INC, "./lib/Validator/";
+    push @INC, "./lib/System/";
 }
 #--autoload
 
@@ -19,20 +20,27 @@ use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 use Data::Dumper;
 use CustomerModel;
 $cgi = new CGI;
+
 #print "Content-type: text/plain";
-%router = Router::getRoutes;
+$router = Router->new;
 $uri = $cgi->param("uri");
 $verb = $cgi->request_method();
+$route = $router->getRoute($uri, $verb);
 
-if($router{$uri} eq undef)
+if($route eq undef)
 {
     use StatusCodeNotFound;
     StatusCodeNotFound::response "Route Not Found!";    
     exit;
 }
 
-$package = $router{$uri}{"Package"};
-$sub = $router{$uri}{"Sub"};
+if($route->{"Private"} == 1){
+    #Implements middleware authenticate
+    #$route->{"Role"} <<--- Get permission for access
+}
+
+$package = $route->{"Package"};
+$sub = $route->{"Sub"};
 
 require "./app/Controller/".$package.".pm";
 

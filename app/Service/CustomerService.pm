@@ -5,5 +5,9 @@ package CustomerService;
     sub loadCustomers {
         return CustomerRepository::loadCustomers;
     }
+
+    sub store {
+        CustomerRepository::store;
+    }
 }
 1;

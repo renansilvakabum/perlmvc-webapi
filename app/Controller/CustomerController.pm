@@ -4,6 +4,7 @@ package CustomerController;
     use StatusCodeOK;
     use StatusCodeNotFound;
     use StatusCodeBadRequest;
+    use StatusCodeCreated;
     use JSON;
     use Try::Tiny;
     use CustomerService;
@@ -14,7 +15,7 @@ package CustomerController;
         return bless $self;
     }
 
-    sub PostCustomers {
+    sub postCustomer {
         try {
             my $customer = CustomerModel->new;
             $customer->setValues({"name" => "2f", "mail" => ""});
@@ -25,14 +26,14 @@ package CustomerController;
                 exit;
             }
 
-            StatusCodeOK::response;
+            StatusCodeCreated::response;
 
         } catch {
             StatusCodeBadRequest::response $_;
         }
     }
 
-    sub GetCustomers {        
+    sub getCustomers {        
         my $customers = CustomerService::loadCustomers;
         
         if(length $customers > 0){
