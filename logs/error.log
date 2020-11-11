@@ -284,3 +284,149 @@ BEGIN failed--compilation aborted at /var/www/startup.cgi line 17" while reading
 [Wed Nov 11 19:30:34 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
 [Wed Nov 11 19:30:34 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
 [Wed Nov 11 19:30:34 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.18.0.1, server: , request: "GET /Startup.cgi?uri=customeruri HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:43:35 [error] 18#18: *2 FastCGI sent in stderr: "[Wed Nov 11 19:43:35 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:43:35 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:43:35 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:43:35 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /Startup.cgi?uri=customeruri HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:43:48 [error] 18#18: *2 FastCGI sent in stderr: "[Wed Nov 11 19:43:48 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:43:48 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:43:48 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:43:48 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /customeruri HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:43:58 [error] 18#18: *2 FastCGI sent in stderr: "[Wed Nov 11 19:43:58 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:43:58 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:43:58 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:43:58 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /customeruri33d3/11 HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:44:01 [error] 18#18: *2 FastCGI sent in stderr: "[Wed Nov 11 19:44:01 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:44:01 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:44:01 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:44:01 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /customeruri33d3/11/v1 HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:50:13 [error] 18#18: *8 FastCGI sent in stderr: "[Wed Nov 11 19:50:13 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:50:13 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:50:13 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:50:13 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /customeruri33d3/11/v1 HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:51:38 [error] 18#18: *11 FastCGI sent in stderr: "[Wed Nov 11 19:51:38 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:51:38 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:51:38 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:51:38 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /customeruri33d3/11/v1 HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:51:54 [error] 18#18: *11 FastCGI sent in stderr: "[Wed Nov 11 19:51:54 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:51:54 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:51:54 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:51:54 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /customeruri33d3/11/v1 HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:52:10 [error] 18#18: *11 FastCGI sent in stderr: "[Wed Nov 11 19:52:10 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:52:10 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:52:10 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:52:10 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /customeruri HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:52:25 [error] 18#18: *11 FastCGI sent in stderr: "[Wed Nov 11 19:52:25 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:52:25 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:52:25 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:52:25 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /customeruri HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:52:28 [error] 18#18: *11 FastCGI sent in stderr: "[Wed Nov 11 19:52:28 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:52:28 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:52:28 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:52:28 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:53:59 [error] 18#18: *18 FastCGI sent in stderr: "[Wed Nov 11 19:53:59 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:53:59 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:53:59 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:53:59 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:54:01 [error] 18#18: *18 FastCGI sent in stderr: "[Wed Nov 11 19:54:01 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:54:01 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:54:01 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:54:01 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:54:02 [error] 18#18: *18 FastCGI sent in stderr: "[Wed Nov 11 19:54:02 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:54:02 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:54:02 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:54:02 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:55:41 [error] 18#18: *23 FastCGI sent in stderr: "[Wed Nov 11 19:55:41 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:55:41 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:55:41 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:55:41 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 19:59:00 [error] 18#18: *26 FastCGI sent in stderr: "[Wed Nov 11 19:59:00 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:59:00 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:59:00 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 19:59:00 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customerurik HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:03:26 [error] 18#18: *29 FastCGI sent in stderr: "[Wed Nov 11 20:03:26 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:03:26 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:03:26 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:03:26 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customerurik HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:03:27 [error] 18#18: *29 FastCGI sent in stderr: "[Wed Nov 11 20:03:27 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:03:27 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:03:27 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:03:27 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:03:30 [error] 18#18: *29 FastCGI sent in stderr: "[Wed Nov 11 20:03:30 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:03:30 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:03:30 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:03:30 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:04:03 [error] 18#18: *29 FastCGI sent in stderr: "[Wed Nov 11 20:04:03 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:04:03 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:04:03 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:04:03 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:04:21 [error] 18#18: *29 FastCGI sent in stderr: "[Wed Nov 11 20:04:21 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:04:21 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:04:21 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:04:21 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:04:40 [error] 18#18: *29 FastCGI sent in stderr: "[Wed Nov 11 20:04:40 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:04:40 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:04:40 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:04:40 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:04:50 [error] 18#18: *29 FastCGI sent in stderr: "[Wed Nov 11 20:04:50 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:04:50 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:04:50 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:04:50 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:05:11 [error] 18#18: *29 FastCGI sent in stderr: "[Wed Nov 11 20:05:11 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:05:11 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:05:11 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:05:11 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:06:30 [error] 18#18: *39 FastCGI sent in stderr: "[Wed Nov 11 20:06:30 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:06:30 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:06:30 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:06:30 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:06:47 [error] 18#18: *39 FastCGI sent in stderr: "[Wed Nov 11 20:06:47 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:06:47 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:06:47 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:06:47 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:07:23 [error] 18#18: *39 FastCGI sent in stderr: "[Wed Nov 11 20:07:23 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:07:23 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:07:23 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:07:23 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:07:37 [error] 18#18: *39 FastCGI sent in stderr: "[Wed Nov 11 20:07:37 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:07:37 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:07:37 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:07:37 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:07:46 [error] 18#18: *39 FastCGI sent in stderr: "[Wed Nov 11 20:07:46 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:07:46 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:07:46 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:07:46 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:07:54 [error] 18#18: *39 FastCGI sent in stderr: "[Wed Nov 11 20:07:54 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:07:54 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:07:54 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:07:54 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:08:16 [error] 18#18: *39 FastCGI sent in stderr: "[Wed Nov 11 20:08:16 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:08:16 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:08:16 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:08:16 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:08:30 [error] 18#18: *39 FastCGI sent in stderr: "[Wed Nov 11 20:08:30 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:08:30 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:08:30 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:08:30 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24.
+[Wed Nov 11 20:08:30 2020] Startup.cgi: D" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:08:30 [error] 18#18: *39 FastCGI sent in stderr: "ied at lib/HTTP/Url.pm line 14" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:08:43 [error] 18#18: *39 FastCGI sent in stderr: "[Wed Nov 11 20:08:43 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:08:43 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:08:43 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:08:43 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24.
+[Wed Nov 11 20:08:43 2020] Startup.cgi: s" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:08:43 [error] 18#18: *39 FastCGI sent in stderr: "yntax error at lib/HTTP/Url.pm line 10, near ");"
+[Wed Nov 11 20:08:43 2020] Startup.cgi: Compilation failed in require at /var/www/Startup.cgi line 22.
+[Wed Nov 11 20:08:43 2020] Startup.cgi: BEGIN failed--compilation aborted at /var/www/Startup.cgi line 22" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:08:59 [error] 18#18: *39 FastCGI sent in stderr: "[Wed Nov 11 20:08:59 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:08:59 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:08:59 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:08:59 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24.
+[Wed Nov 11 20:08:59 2020] Startup.cgi: s" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:08:59 [error] 18#18: *39 FastCGI sent in stderr: "yntax error at lib/HTTP/Url.pm line 10, near ");"
+[Wed Nov 11 20:08:59 2020] Startup.cgi: Compilation failed in require at /var/www/Startup.cgi line 22.
+[Wed Nov 11 20:08:59 2020] Startup.cgi: BEGIN failed--compilation aborted at /var/www/Startup.cgi line 22" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"
+2020/11/11 20:09:08 [error] 18#18: *39 FastCGI sent in stderr: "[Wed Nov 11 20:09:08 2020] Model.pm: Prototype mismatch: sub Model::from_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:09:08 2020] Model.pm: Prototype mismatch: sub Model::to_json ($) vs ($@) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:09:08 2020] Model.pm: Prototype mismatch: sub Model::decode_json: none vs ($) at lib/Data/Model.pm line 4.
+[Wed Nov 11 20:09:08 2020] Model.pm: keys on reference is experimental at lib/Data/Model.pm line 24" while reading response header from upstream, client: 172.20.0.1, server: , request: "GET /v1/customeruri/ HTTP/1.1", upstream: "fastcgi://unix:/var/run/fcgiwrap.socket:", host: "localhost:8006"

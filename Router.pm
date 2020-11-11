@@ -9,8 +9,8 @@ package Router;
         return bless {};
     }
 
-    $_routes->registerRoute("POST", "customeruri", "CustomerController", "postCustomer", 0, "");
-    $_routes->registerRoute("GET", "customeruri", "CustomerController", "getCustomers", 0, "");
+    $_routes->registerRoute("POST", "/v1/customeruri", "CustomerController", "postCustomer", 0, "");
+    $_routes->registerRoute("GET", "/v1/customeruri", "CustomerController", "getCustomers", 0, "");
 
     sub getRoute {
         my ($self, $uri, $verb) = @_;           
@@ -18,7 +18,7 @@ package Router;
         if($_routes->getRoutes($verb) eq undef){
             return undef;
         } 
-        
+
         return $_routes->getRoutes($verb)->{$uri};
     }
 

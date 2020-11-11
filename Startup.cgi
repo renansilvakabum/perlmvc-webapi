@@ -19,18 +19,19 @@ use CGI;
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 use Data::Dumper;
 use CustomerModel;
+use Url;
 $cgi = new CGI;
 
 #print "Content-type: text/plain";
 $router = Router->new;
-$uri = $cgi->param("uri");
+$uri = Url::getRequestURI;
 $verb = $cgi->request_method();
 $route = $router->getRoute($uri, $verb);
 
 if($route eq undef)
 {
     use StatusCodeNotFound;
-    StatusCodeNotFound::response "Route Not Found!";    
+    StatusCodeNotFound::response "Route Not Found!";  
     exit;
 }
 
