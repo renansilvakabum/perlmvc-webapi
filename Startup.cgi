@@ -11,6 +11,10 @@ BEGIN{
     push @INC, "./lib/Service/";
     push @INC, "./lib/Validator/";
     push @INC, "./lib/System/";
+    push @INC, "./lib/JSON/";
+    push @INC, "./lib/JSON/WebToken/";
+    push @INC, "./lib/JSON/WebToken/Crypt/";
+    push @INC, "./app/Config/";
 }
 #--autoload
 
@@ -20,9 +24,9 @@ use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 use Data::Dumper;
 use CustomerModel;
 use Url;
-$cgi = new CGI;
+use ApplicationConfig;
 
-#print "Content-type: text/plain";
+$cgi = new CGI;
 $router = Router->new;
 $uri = Url::getRequestURI;
 $verb = $cgi->request_method();

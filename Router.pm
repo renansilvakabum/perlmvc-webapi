@@ -9,8 +9,9 @@ package Router;
         return bless {};
     }
 
-    $_routes->registerRoute("POST", "/v1/customeruri", "CustomerController", "postCustomer", 0, "");
-    $_routes->registerRoute("GET", "/v1/customeruri", "CustomerController", "getCustomers", 0, "");
+    $_routes->registerRoute("POST", "/v1/customer", "CustomerController", "postCustomer", 0, "");
+    $_routes->registerRoute("GET", "/v1/customer", "CustomerController", "getCustomers", 0, "");
+    $_routes->registerRoute("GET", "/v1/user/authenticate", "UserController", "authenticate", 0, "");
 
     sub getRoute {
         my ($self, $uri, $verb) = @_;           
