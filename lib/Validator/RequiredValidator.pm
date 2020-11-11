@@ -8,16 +8,14 @@ package RequiredValidator;
     }
 
     sub setParameters {
-        my ($message) = @_;
+        my ($self, $message) = @_;
         
-        return bless {};
+        return $self;
     }
 
     sub validate {
-        $value = $_[0];        
-        print "Content-Type: text/html \n\n";
-        print "111";
-        return Validator::validate($value ne undef || $value > 0, $message);
+        my ($self, $value) = @_;
+        return Validator->new->validate($value ne undef || $value > 0, $message);
     }
     
 }

@@ -9,12 +9,13 @@ package MinValidator;
     }
 
     sub setParameters {
-        my ($message, $length) = @_;
+        my ($self, $message, $length) = @_;
+        return $self;
     }
 
     sub validate {
         $value = $_[0];
-        Validator::validate (scalar $value >= $length) $message ;
+        return Validator->new->validatevalidate((scalar $value >= $length), $message) ;
     }
     
 }
