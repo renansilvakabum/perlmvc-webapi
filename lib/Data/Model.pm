@@ -1,6 +1,10 @@
 package Model;
 {    
+    use JSON::PP;
     use JSON;
+    use StringUtils;
+    use Data::Dumper;
+
     my @_attributes = undef;
     my @_validates = undef;
     my %_values = undef;
@@ -16,33 +20,12 @@ package Model;
     }
 
     sub setValues {
-        my ($self, $values) = @_;        
-        $messageValidators = "";        
+        my ($self, $values) = @_;       
         foreach my $key (keys $values){
             if(exists($_attributes[$key])){
-                $messageValidator = $self->setValue($key, $values[$key], 0);
-                $messageValidators .=  $messageValidator ne "" ? ", " : "";                
-                print $messageValidator;
+                $self->set($key, $values->{$key});                                                 
             }
-        }    
-        if($messageValidators ne ""){        
-            $messageValidators = substr($messageValidators, 0, (scalar $messageValidators) - 2 );
-            die $messageValidators;
-        }
-        
-    }
-
-    sub setValue {
-        my ($self, $attribute, $value, $throwException) = @_;
-        $_values{$attribute} = $value;
-        
-        $message = $self->validate($attribute);
-        
-        if($message ne "" && $throwException){
-            die($message);
-        }
-
-        return $message;
+        }                     
     }
 
     sub set {
@@ -60,27 +43,56 @@ package Model;
     }
 
     sub validate {
+        $self = $_[0];
+
+        foreach my $key (keys %_values){
+            if(exists($_attributes[$key])) {
+                $messageValidator = $self->validateValue($key);
+                if(StringUtils::trim($messageValidator) ne ""){                                    
+                    $messageValidators = $messageValidators . $messageValidator . ", ";                       
+                }                                 
+            }
+        }    
+
+        if($messageValidators ne ""){        
+            $messageValidators = substr($messageValidators, 0, (scalar $messageValidators) - 2 );
+
+            @messageValidators = split /,/, $messageValidators;
+
+            return JSON->new->allow_nonref->encode([@messageValidators]);            
+        }        
+
+    }
+
+    sub validateValue {
         my ($self, $attribute) = @_;        
+        
         if($_validates{$attribute} eq undef){
             return "";
         }      
 
         my $messageValidators = "";
         if($_validates{$attribute} != undef){
-
+                
             for(@{$_validates{$attribute}}) {
-
+                
                 if($_validates{$attribute}->[$i] != undef){
-                    my $messageValidator = $_->validate($_values{$attribute}, 0);
-                    $messageValidators .=  $messageValidator ne "" ? ", " : "";      
+                    
+                    my $messageValidator = $_->validate($_values{$attribute});
+                    
+                    if(StringUtils::trim($messageValidator) ne ""){
+                                        
+                        $messageValidators = $messageValidators . $messageValidator . ", ";   
+                     
+                    }   
                 }
 
             }
+            $messageValidators = substr($messageValidators, 0, (scalar $messageValidators) - 2 );
 
         }                
-        print "Content-Type: text/html \n\n";
-        print $messageValidator;
-        return $messageValidator;
+                
+        return $messageValidators;
     }
 }
 1;

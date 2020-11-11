@@ -1,21 +1,19 @@
 package RequiredValidator;
 {
     use Validator;
-    my $message;
+    my $_message;
 
     sub new {
-        return bless {};
-    }
+        my ($self, $message) = @_;        
 
-    sub setParameters {
-        my ($self, $message) = @_;
-        
-        return $self;
+        $_message = $message;
+
+        return bless {};
     }
 
     sub validate {
         my ($self, $value) = @_;
-        return Validator->new->validate($value ne undef || $value > 0, $message);
+        return Validator->new->validate($value ne undef || $value > 0, $_message);
     }
     
 }

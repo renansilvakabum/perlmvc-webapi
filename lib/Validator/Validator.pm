@@ -8,7 +8,7 @@ package Validator;
         my ($self, $condition, $message) = @_; 
         
         if(!$condition)
-        {
+        {            
             return $message;
         }
         

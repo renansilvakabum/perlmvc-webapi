@@ -9,10 +9,10 @@ package CustomerModel;
     $model = Model->new;    
 
     $model->setAttribute("id");
-    $model->setAttribute("name", [RequiredValidator->new->setParameters("Field Name is Required!"), 
-                                    MaxValidator->new->setParameters("Maxlength of name is 30 caracters!", 30)]);
-    $model->setAttribute("mail", [RequiredValidator->new->setParameters("Field Mail is Required!"), 
-                                    MaxValidator->new->setParameters("Maxlength of Mail is 30 caracters!", 30)]);
+    $model->setAttribute("name", [RequiredValidator->new("Field Name is Required!"), 
+                                    MaxValidator->new("Maxlength of name is 30 caracters!", 30)]);
+    $model->setAttribute("mail", [RequiredValidator->new("Field Mail is Required!"), 
+                                    MaxValidator->new("Maxlength of Mail is 30 caracters!", 30)]);
     $model->setAttribute("excluded");
         
     sub new {
@@ -22,6 +22,10 @@ package CustomerModel;
     sub setValues {
         $values = $_[1];       
         $model->setValues($values);
+    }
+
+    sub validate {
+        $model->validate();
     }
 
 }
