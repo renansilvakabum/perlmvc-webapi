@@ -288,3 +288,7 @@
 172.20.0.1 - - [16/Nov/2020:14:04:27 +0000] "POST /v1/customer HTTP/1.1" 400 102 "-" "PostmanRuntime/7.26.5"
 172.20.0.1 - - [16/Nov/2020:14:04:54 +0000] "POST /v1/customer HTTP/1.1" 400 101 "-" "PostmanRuntime/7.26.5"
 172.20.0.1 - - [16/Nov/2020:14:05:28 +0000] "POST /v1/customer HTTP/1.1" 400 65 "-" "PostmanRuntime/7.26.5"
+172.20.0.1 - - [16/Nov/2020:14:06:57 +0000] "POST /v1/customer HTTP/1.1" 400 76 "-" "PostmanRuntime/7.26.5"
+172.20.0.1 - - [16/Nov/2020:14:07:04 +0000] "POST /v1/customer HTTP/1.1" 400 49 "-" "PostmanRuntime/7.26.5"
+172.20.0.1 - - [16/Nov/2020:14:07:09 +0000] "POST /v1/customer HTTP/1.1" 400 87 "-" "PostmanRuntime/7.26.5"
+172.20.0.1 - - [16/Nov/2020:14:07:15 +0000] "POST /v1/customer HTTP/1.1" 201 5 "-" "PostmanRuntime/7.26.5"
