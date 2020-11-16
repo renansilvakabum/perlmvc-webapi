@@ -25,12 +25,15 @@ use Data::Dumper;
 use CustomerModel;
 use Url;
 use ApplicationConfig;
+use Request;
+use JSON;
 
 $cgi = new CGI;
 $router = Router->new;
 $uri = Url::getRequestURI;
 $verb = $cgi->request_method();
 $route = $router->getRoute($uri, $verb);
+$params = Request::getParams;
 
 if($route eq undef)
 {
@@ -51,4 +54,4 @@ require "./app/Controller/".$package.".pm";
 
 eval "use $package;";
 $instance = $package->new;
-$instance->$sub;
+$instance->$sub($params);
