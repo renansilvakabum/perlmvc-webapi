@@ -6,7 +6,7 @@
 <br><br>
 
 ## Description
-   >This framework was developed to support Web Apis rest based on the PERL language. It is possible to create friendly routes, validate requests recursively with DO's, return responses with status code and validate data models.
+   >This framework was developed to support Web Apis rest based on the PERL language. It is possible to create friendly routes, validate requests recursively with DTO's, return responses with status code and validate data models.
 
 ## Dependencies
 
