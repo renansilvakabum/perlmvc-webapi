@@ -1,8 +1,6 @@
 package MaxValidator;
 {
     use Validator;
-    my $_length;
-    my $_message;
 
     sub new {
         my ($self, $message, $length) = @_;
@@ -10,12 +8,13 @@ package MaxValidator;
         $_length = $length;
         $_message = $message;
 
-        return bless {};
+        return bless {"_message" => $message, "_length" => $length};
     }
 
     sub validate {
         my ($self, $value) = @_;
-        return Validator->new->validate((scalar $value <= $_length), $_message);
+
+        return Validator->new->validate((scalar $value <= $self->{_length}), $self->{_message});
     }
     
 }

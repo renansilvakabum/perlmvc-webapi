@@ -18,7 +18,7 @@ package CustomerController;
     sub postCustomer {
         try {
             my $customer = CustomerModel->new;
-            $customer->setValues({"name" => "2f", "mail" => ""});
+            $customer->setValues({"name" => "", "mail" => ""});
             $message = $customer->validate;
             
             if($message ne ""){

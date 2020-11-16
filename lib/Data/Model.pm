@@ -5,24 +5,28 @@ package Model;
     use StringUtils;
     use Data::Dumper;
 
-    my @_attributes = undef;
-    my @_validates = undef;
-    my %_values = undef;
-
     sub new {
-        return bless {};
+        return bless {"_attributes" => undef, "_validates" => undef, "_values" => undef};
     }
 
     sub setAttribute {
         my ($self, $attribute, $validate) = @_;
-        $_values{$attribute} = undef;
-        $_validates{$attribute} = $validate;
+
+        if($self->{"_attributes"} eq undef){
+            $self->{"_attributes"} = ();
+        }
+
+        push @{$self->{_attributes}}, $attribute;
+
+        $self->{_values}{$attribute} = undef;
+        $self->{_validates}{$attribute} = $validate;
     }
 
-    sub setValues {
+    sub setValues {      
         my ($self, $values) = @_;       
+
         foreach my $key (keys $values){
-            if(exists($_attributes[$key])){
+            if(exists($self->{_attributes}[$key])){               
                 $self->set($key, $values->{$key});                                                 
             }
         }                     
@@ -30,23 +34,23 @@ package Model;
 
     sub set {
         my ($self, $attribute, $value) = @_;
-        $_values{$attribute} = $value;
+        $self->{_values}{$attribute} = $value;
     }
 
     sub get {
         my ($self, $attribute) = @_;
-        return $_values{$attribute};
+        return $self->{_values}{$attribute};
     }
 
     sub getValues {
-        return $_values;
+        return $self->{_values};
     }
 
     sub validate {
         $self = $_[0];
 
-        foreach my $key (keys %_values){
-            if(exists($_attributes[$key])) {
+        foreach my $key (keys $self->{_values}){
+            if(exists($self->{_attributes}[$key])) {
                 $messageValidator = $self->validateValue($key);
                 if(StringUtils::trim($messageValidator) ne ""){                                    
                     $messageValidators = $messageValidators . $messageValidator . ", ";                       
@@ -66,19 +70,19 @@ package Model;
 
     sub validateValue {
         my ($self, $attribute) = @_;        
-        
-        if($_validates{$attribute} eq undef){
+
+        if($self->{_validates}{$attribute} eq undef){
             return "";
         }      
 
         my $messageValidators = "";
-        if($_validates{$attribute} != undef){
+        if($self->{_validates}{$attribute} != undef){
                 
-            for(@{$_validates{$attribute}}) {
+            for(@{$self->{_validates}{$attribute}}) {
                 
-                if($_validates{$attribute}->[$i] != undef){
+                if($_ != undef){
                     
-                    my $messageValidator = $_->validate($_values{$attribute});
+                    my $messageValidator = $_->validate($self->{_values}{$attribute});
                     
                     if(StringUtils::trim($messageValidator) ne ""){
                                         
