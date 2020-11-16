@@ -14,8 +14,12 @@
 
 > Docker Compose install: https://docs.docker.com/compose/install/;
 
+## Initialize
+> docker-compose up -d
+
 ## Architecture
 
 **Startup Diagram:**
+<br><br>
 ![startupdiagram.png](images-github/startupdiagram.png)
 
