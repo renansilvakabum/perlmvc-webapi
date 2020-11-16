@@ -16,9 +16,11 @@ package CustomerController;
     }
 
     sub postCustomer {
-        try {
-            my $customer = CustomerModel->new;
-            $customer->setValues({"name" => "2", "mail" => "2"});
+
+        my ($self, $param) = @_;
+        my $customer = CustomerModel->new;
+        try {                    
+            $customer->setValues($param);
             $message = $customer->validate;
             
             if($message ne ""){
