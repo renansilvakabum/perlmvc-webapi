@@ -18,5 +18,22 @@ package Routes;
         my ($self, $verb, $uri, $package, $sub, $private, $role) = @_;
         ${$verb."routes"}->{$uri} = {"Package" => $package, "Sub" => $sub, "Private" => $private, "Role" => $role};
     }
+
+    sub hasPermission {
+        
+        my ($route, $role) = @_;
+
+        if($route->{Role} == undef){            
+            return 1;
+        }               
+
+        for(@{$route->{Role}}){            
+            if($_ eq $role){
+                return 1;
+            }
+        }        
+        
+        return 0;
+    }
 }
 1;

@@ -9,6 +9,7 @@ package CustomerController;
     use Try::Tiny;
     use CustomerService;
     use CustomerModel;
+    use CustomerPostDTO;
 
     sub new {
         my $self = {};
@@ -18,8 +19,10 @@ package CustomerController;
     sub postCustomer {
 
         my ($self, $param) = @_;
-        my $customer = CustomerModel->new;
+        my $customer = CustomerPostDTO->new;
+        
         try {                    
+
             $customer->setValues($param);
             $message = $customer->validate;
             
@@ -31,7 +34,9 @@ package CustomerController;
             StatusCodeCreated::response;
 
         } catch {
+
             StatusCodeBadRequest::response $_;
+            
         }
     }
 

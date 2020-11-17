@@ -12,28 +12,23 @@ package Model;
     sub setAttribute {
         my ($self, $attribute, $validate) = @_;
 
-        if($self->{"_attributes"} eq undef){
-            $self->{"_attributes"} = ();
-        }
-
-        push @{$self->{_attributes}}, $attribute;
-
+        $self->{_attributes}{$attribute} = 1;
         $self->{_values}{$attribute} = undef;
         $self->{_validates}{$attribute} = $validate;
     }
 
     sub setValues {      
-        my ($self, $values) = @_;       
-
-        foreach my $key (keys $values){
-            if(exists($self->{_attributes}[$key])){               
+        my ($self, $values) = @_;           
+        
+        foreach my $key (keys $values){            
+            if($self->{_attributes}{$key} == 1){
                 $self->set($key, $values->{$key});                                                 
             }
-        }                     
+        }             
     }
 
     sub set {
-        my ($self, $attribute, $value) = @_;
+        my ($self, $attribute, $value) = @_;        
         $self->{_values}{$attribute} = $value;
     }
 
@@ -42,7 +37,8 @@ package Model;
         return $self->{_values}{$attribute};
     }
 
-    sub getValues {
+    sub getValues {        
+        my ($self) = @_;
         return $self->{_values};
     }
 
@@ -50,7 +46,7 @@ package Model;
         $self = $_[0];
 
         foreach my $key (keys $self->{_values}){
-            if(exists($self->{_attributes}[$key])) {
+            if($self->{_attributes}{$key} == 1) {
                 $messageValidator = $self->validateValue($key);
                 if(StringUtils::trim($messageValidator) ne ""){                                    
                     $messageValidators = $messageValidators . $messageValidator . ", ";                       
@@ -59,7 +55,7 @@ package Model;
         }    
 
         if($messageValidators ne ""){        
-            $messageValidators = substr($messageValidators, 0, (scalar $messageValidators) - 2 );
+            $messageValidators = substr($messageValidators, 0, (length $messageValidators) - 2 );
 
             @messageValidators = split /,/, $messageValidators;
 
@@ -92,7 +88,7 @@ package Model;
                 }
 
             }
-            $messageValidators = substr($messageValidators, 0, (scalar $messageValidators) - 2 );
+            $messageValidators = substr($messageValidators, 0, (length $messageValidators) - 2 );
 
         }                
                 

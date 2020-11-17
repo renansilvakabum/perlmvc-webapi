@@ -26,7 +26,7 @@ package CustomerModel;
 
     sub getValue {
         my ($self, $attribute) = @_;
-        return $self->{model}->getValue($attribute);
+        return $self->{model}->get($attribute);
     }
 
     sub validate {
