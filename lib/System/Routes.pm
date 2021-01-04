@@ -15,8 +15,8 @@ package Routes;
     }
 
     sub registerRoute {
-        my ($self, $verb, $uri, $package, $sub, $private, $role) = @_;
-        ${$verb."routes"}->{$uri} = {"Package" => $package, "Sub" => $sub, "Private" => $private, "Role" => $role};
+        my ($self, $verb, $uri, $module, $version, $application, $private) = @_;
+        ${$verb."routes"}->{$uri} = {"Module" => $module, "Version" => $version, "Application" => $application, "Private" => $private};
     }
 
     sub hasPermission {

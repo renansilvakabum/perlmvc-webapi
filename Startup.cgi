@@ -2,11 +2,6 @@
 
 #autoload
 BEGIN{    
-    push @INC, "./app/Controller/";
-    push @INC, "./app/Model/";
-    push @INC, "./app/DTO/";
-    push @INC, "./app/Service/";
-    push @INC, "./app/Repository/";
     push @INC, "./lib/Data/";
     push @INC, "./lib/HTTP/";
     push @INC, "./lib/Service/";
@@ -14,13 +9,14 @@ BEGIN{
     push @INC, "./lib/System/";    
     push @INC, "./lib/JSON/";
     push @INC, "./lib/Middleware/";
-    push @INC, "./app/Config/";
+    push @INC, "./app/Configs/";
+    push @INC, "./app/Configs/";
+    push @INC, $ENV{'HTTP_BASEAPP'}."/GLOBAL/cgi-local/module/"; 
 }
 #--autoload
 
 use Router;
 use CGI;
-use CustomerModel;
 use Url;
 use ApplicationConfig;
 use Request;
@@ -29,11 +25,11 @@ use Middlewares;
 use Try::Tiny;
 
 eval {    
-
+        
     require "./Initialize.cgi";
 
-    Middlewares::registerMiddleware(AuthenticateMiddleware->new($route, $token, \$params));
-
+    Middlewares::registerMiddleware(AuthenticateMiddleware->new($route));
+    
     if($route eq undef)
     {
         use StatusCodeNotFound;
@@ -42,15 +38,19 @@ eval {
     }
 
     Middlewares::executeMiddlewares;
-
-    $package = $route->{"Package"};
-    $sub = $route->{"Sub"};
-
-    require "./app/Controller/".$package.".pm";
-
-    eval "use $package;";
-    $instance = $package->new;
-    $instance->$sub($params);    
+    
+    $version = $route->{"Version"};
+    $application = $route->{"Application"};
+    $module = $route->{"Module"};
+    
+    push @INC, "./app/Modules/$module/$version/Models/";
+    push @INC, "./app/Modules/$module/$version/Applications/$application/";
+        
+    require "./app/Modules/$module/$version/Applications/$application/Application.pm";
+    
+    eval "use Application";
+    $instance = Application->new;
+    $instance->execute($params);    
     
 } or do {
 

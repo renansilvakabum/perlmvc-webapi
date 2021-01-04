@@ -1,41 +1,37 @@
 package AuthenticateMiddleware;
 {
-    use UserService;
+
+    BEGIN{            
+        push @INC, $ENV{'HTTP_BASEAPP'}."/GLOBAL/cgi-local/module/Services/";            
+    }
+    
     use StatusCodeForbidden;
-    use StatusCodeUnauthorized;
     use JSON;
     use Routes;
+    use CGI::Cookie;
+    $cgi = new CGI;
 
     sub new {
-        my ($self, $route, $token, $params) = @_;   
+        my ($self, $route, $token, $params, $config) = @_;   
 
-        return bless {"_route" => $route, "_token" => $token, "_params" => $params};
+        return bless {"_route" => $route};
     }
 
     sub execute {
         $self = $_[0];
         
-        if($self->{_route}{"Private"} == 1){
+        if($self->{_route}{"Private"} == 1){                        
             
-            $userdata = UserService::tokenValidate($self->{_token});
+            $manager_usuario = $cgi->cookie("manager_usuario");
             
-            if($userdata eq undef){
+            if($manager_usuario eq undef){
+                
                 use StatusCodeForbidden;
 
-                StatusCodeForbidden::response "Token is invalid!";
+                StatusCodeForbidden::response "Session is invalid!";
                 die;
-            }
-
-            if(!Routes::hasPermission($self->{_route}, $userdata->{role})){
-
-                use StatusCodeUnauthorized;
                 
-                StatusCodeUnauthorized::response "Permission is not valid!";
-                die;
-
             }
-
-            ${$self->{_params}}->{"_userdata"} = $userdata;
 
         }
     }

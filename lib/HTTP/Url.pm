@@ -1,6 +1,5 @@
 package Url;
-{
-    use StringUtils;
+{    
     sub getRequestURI {
         my $URI = $ENV{REQUEST_URI};
 

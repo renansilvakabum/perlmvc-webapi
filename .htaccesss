@@ -1,0 +1,18 @@
+RewriteEngine On
+
+SetEnvIf Host "^manager\.qa(.*)$"   HTTP_SITEMANAGER=manager.qa.kabumdev.com.br
+SetEnvIf Host "^manager\.stg(.*)$"  HTTP_SITEMANAGER=manager.stg.kabumdev.com.br
+SetEnvIf Host "^manager\.prod(.*)$" HTTP_SITEMANAGER=manager.kabum.com.br
+
+RewriteRule ^/$ http://manager.kabum.com.br/cgi-local/login/login.cgi [R=301,L]
+
+# Força download de extensões de arquivo para não abrir
+AddType application/octet-stream .xml
+
+# Rewrite Departamentos Topo Menu para URL amigáveis
+RewriteRule ^dep/([0-9]+)$ /cgi-local/principal.cgi?dep=$1 [QSA,L]
+
+# Promoções Listagem - Exeterna - Pssara id da prmoção no parametro $1
+RewriteRule ^promocao/(.*)$ http://%{ENV:HTTP_SITEMANAGER}/cgi-local/marketing/promocao/promocao_listagem.cgi?promocaoId=$1 [R=301,L]
+RewriteRule ^coletor(.*)$ http://%{ENV:HTTP_SITEMANAGER}/cgi-local/expedicao/armazenagem/coletor/sku_setar.cgi [R=301,L]
+RewriteRule ^(.*)$ ./api/startup.php?u=$1 [QSA]

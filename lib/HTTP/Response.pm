@@ -19,6 +19,7 @@ package Response;
 
         print $cgi->header(
             -status => $code,
+            -charset => 'utf-8',
             -type => $contenttype
         );          
         
